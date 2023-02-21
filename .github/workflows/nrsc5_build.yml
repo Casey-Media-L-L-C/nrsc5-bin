@@ -24,7 +24,8 @@ on:
          - windows-latest
       mingw:
           description: "Windows Build?"
-          required: false
+          required: true
+          default: true
           type: tf
 jobs:
   matrix:
@@ -68,11 +69,11 @@ jobs:
           update: true
           install: git mingw-w64-x86_64-cc
       - name: MSYS2 Setup
-        run: ./nrsc5-bin/support/msys2-build
+        run: ~/nrsc5-bin/support/msys2-build
       - uses: actions/upload-artifact@v3
         with:
           name: windows-latest
-          path: ./nrsc5-bin
+          path: ~/nrsc5-bin
   ubuntu-build:
     name: Ubuntu CI
     runs-on: "${{ github.event.inputs.os }}"
