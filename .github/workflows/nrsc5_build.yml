@@ -121,6 +121,7 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
+          NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
           brew install autoconf automake libao fftw librtlsdr portaudio
           pip3 install --global-option=build_ext --global-option="-I/usr/local/include/" --global-option="-L/usr/local/lib" pyaudio
       - name: Checkout code
