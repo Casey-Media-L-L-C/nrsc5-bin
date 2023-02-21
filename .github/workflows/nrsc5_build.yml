@@ -19,10 +19,9 @@ on:
          type: array
          default: "ubuntu-latest"
          options:
-         - ubuntu-18.04
-         - ubuntu-20.04
          - ubuntu-latest
-         - macos-10.15
+         - macos-latest
+         - windows-latest
       mingw:
           description: "Windows Build?"
           required: false
@@ -73,9 +72,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: windows-latest
-          path: |
-           /home/runner/work/nrsc5-bin/nrsc5-bin/nrsc5.exe
-           /home/runner/work/nrsc5-bin/nrsc5-bin/libnrsc5.dll
+          path: ./nrsc5-bin
   ubuntu-build:
     name: Ubuntu CI
     runs-on: "${{ github.event.inputs.os }}"
@@ -115,7 +112,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: "${{ github.event.inputs.os }}"
-          path: /home/runner/work/nrsc5-bin/nrsc5-bin/build
+          path: /home/runner/work/nrsc5-bin
           
   macos11-build:
     name: MacOS Latest
