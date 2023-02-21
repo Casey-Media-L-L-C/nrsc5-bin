@@ -74,8 +74,8 @@ jobs:
         with:
           name: windows-latest
           path: |
-            C:\msys64\mingw64\bin\nrsc5.exe
-            C:\msys64\mingw64\bin\libnrsc5.dll
+           /home/runner/work/nrsc5-bin/nrsc5-bin/nrsc5.exe
+           /home/runner/work/nrsc5-bin/nrsc5-bin/libnrsc5.dll
   ubuntu-build:
     name: Ubuntu CI
     runs-on: "${{ github.event.inputs.os }}"
@@ -115,7 +115,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: "${{ github.event.inputs.os }}"
-          path: /nrsc5/build
+          path: /home/runner/work/nrsc5-bin/nrsc5-bin/build
           
   macos11-build:
     name: MacOS Latest
