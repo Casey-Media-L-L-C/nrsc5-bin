@@ -2,11 +2,15 @@
 
 This program receives NRSC-5 digital radio stations using an RTL-SDR dongle. It offers a command-line interface as well as an API upon which other applications can be built. Before using it, you'll first need to compile the program using the build instructions below.
 
+This fork's sole purpose is to further document and automate the process of compiling the various applications utilizing Github Actions. Some rudimentary and preliminary work has been done to facilitate this vision. 
+
+Also note that this is a template project, it is for you to fork and compile using your preferred options and operating systems
+
 ## Building on Ubuntu, Debian or Raspbian
 
     $ sudo apt install git build-essential cmake autoconf libtool libao-dev libfftw3-dev librtlsdr-dev
-    $ git clone https://github.com/theori-io/nrsc5.git
-    $ cd nrsc5
+    $ git clone https://github.com/thals1992/nrsc5-bin.git
+    $ cd nrsc5-bin
     $ mkdir build
     $ cd build
     $ cmake [options] ..
@@ -34,8 +38,8 @@ Follow the Ubuntu instructions above, but replace the first command with the fol
 
 ## Building on macOS using [Homebrew](https://brew.sh)
 
-    $ curl https://raw.githubusercontent.com/theori-io/nrsc5/master/nrsc5.rb > /tmp/nrsc5
-    $ brew install --HEAD -s /tmp/nrsc5
+    $ curl https://raw.githubusercontent.com/thals1992/nrsc5-bin/master/nrsc5.rb > /tmp/nrsc5.rb
+    $ brew install --HEAD -s /tmp/nrsc5.rb
 
 ## Building for Windows
 
@@ -51,7 +55,7 @@ If this is the first time running pacman, you will be told to close the terminal
 
     $ pacman -Su
     $ pacman -S git
-    $ git clone https://github.com/theori-io/nrsc5.git
+    $ git clone https://github.com/thals1992/nrsc5-bin.git
     $ nrsc5/support/msys2-build
 
 You can test your installation using the included sample file:
